@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj": {}
+    "c:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj": {
+    "c:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj",
+        "projectUniqueName": "c:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj",
         "projectName": "photogrph-Displayer-api",
-        "projectPath": "C:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj",
+        "projectPath": "c:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj",
         "packagesPath": "C:\\Users\\yared\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\obj\\",
+        "outputPath": "c:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yared\\AppData\\Roaming\\NuGet\\NuGet.Config"

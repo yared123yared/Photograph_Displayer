@@ -10,11 +10,12 @@ namespace photogrph_Displayer_api.Migrations
                 name: "Photographer",
                 columns: table => new
                 {
-                    PhotographerId = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
+                    PhotographerId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FName = table.Column<string>(nullable: true),
                     LName = table.Column<string>(nullable: true),
                     Gender = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     WorkTitle = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
@@ -23,20 +24,21 @@ namespace photogrph_Displayer_api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Photographer", x => new { x.PhotographerId, x.Email });
+                    table.PrimaryKey("PK_Photographer", x => x.PhotographerId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Photos",
                 columns: table => new
                 {
-                    PhotosId = table.Column<int>(nullable: false),
-                    PhotographerEmail = table.Column<string>(nullable: false),
+                    PhotosId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PhotographerEmail = table.Column<string>(nullable: true),
                     PhotosName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Photos", x => new { x.PhotographerEmail, x.PhotosId });
+                    table.PrimaryKey("PK_Photos", x => x.PhotosId);
                 });
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UiK6H6KN+r1DB9dUcCC3alMNr6y48IloxTnAz6A+ThS/j+JChSzALZHVJXQyx6QdTna5kAbuC4/8Ofr4jBpO1A==",
+  "dgSpecHash": "hTI8AuONN6ZhJ70dj9768rn2Lr6ljfkuymUgAgFbd9AcSAwNEymMNk1ER+PPSIy34YAzyhzIsyev6UHWCdmGIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj",
+  "projectFilePath": "c:\\Users\\yared\\Documents\\education\\Photograph-Displayer\\photogrph-Displayer-api\\photogrph-Displayer-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yared\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\yared\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",

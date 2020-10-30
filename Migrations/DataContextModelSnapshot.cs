@@ -21,15 +21,17 @@ namespace photogrph_Displayer_api.Migrations
             modelBuilder.Entity("Model.Photographer", b =>
                 {
                     b.Property<int>("PhotographerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FName")
@@ -50,23 +52,25 @@ namespace photogrph_Displayer_api.Migrations
                     b.Property<string>("WorkTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PhotographerId", "Email");
+                    b.HasKey("PhotographerId");
 
                     b.ToTable("Photographer");
                 });
 
             modelBuilder.Entity("Model.Photos", b =>
                 {
-                    b.Property<string>("PhotographerEmail")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("PhotosId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("PhotographerEmail")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotosName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PhotographerEmail", "PhotosId");
+                    b.HasKey("PhotosId");
 
                     b.ToTable("Photos");
                 });

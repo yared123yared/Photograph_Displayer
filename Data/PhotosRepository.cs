@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -19,10 +20,24 @@ namespace Data
             return true;
         }
 
+
+
         public async Task<List<Photos>> GetData()
         {
             //    Getting database data here
-            return await _context.Photos.ToListAsync();
+            var model = await _context.Photos.ToListAsync();
+            foreach (var photo in model)
+            {
+                if (photo.PhotographerEmail.Equals("yaredyaya16@gmail.com"))
+                {
+                    Console.WriteLine("yesss");
+                }
+            }
+
+
+            Console.WriteLine(model);
+            return model;
+
         }
 
         public async Task<Photos> GetDataByEmail(string email)
