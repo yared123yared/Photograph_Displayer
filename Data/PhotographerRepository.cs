@@ -30,6 +30,11 @@ namespace Data
             return await _context.Photographer.FirstOrDefaultAsync(x => x.Email == email);
         }
 
+
+
+
+
+
         public async Task<Photographer> GetDataById(int id)
         {
             return await _context.Photographer.FirstOrDefaultAsync(x => x.PhotographerId == id);
@@ -42,7 +47,7 @@ namespace Data
             return dept;
         }
 
-        Task<List<Photographer>> IRepository<Photographer>.GetDataByEmail(string email)
+        Task<List<Photographer>> IRepository<Photographer>.GetPhotosByEmail(string email)
         {
             throw new System.NotImplementedException();
         }

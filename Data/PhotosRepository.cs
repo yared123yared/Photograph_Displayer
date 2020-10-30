@@ -30,7 +30,7 @@ namespace Data
 
         }
 
-        public async Task<List<Photos>> GetDataByEmail(string email)
+        public async Task<List<Photos>> GetPhotosByEmail(string email)
         {
             var model = await _context.Photos.ToListAsync();
             List<Photos> filteredPhotos = new List<Photos>();
@@ -43,6 +43,11 @@ namespace Data
                 }
             }
             return filteredPhotos;
+        }
+
+        public Task<Photos> GetDataByEmail(string email)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Photos> GetDataById(int id)

@@ -7,8 +7,9 @@ namespace Data
     {
         Task<List<T>> GetData();
         Task<T> GetDataById(int id);
+        Task<T> GetDataByEmail(string email);
 
-        Task<List<T>> GetDataByEmail(string email);
+        Task<List<T>> GetPhotosByEmail(string email);
         Task<T> UpdateData(T student);
         Task<bool> DeleteData(T student);
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -52,6 +53,7 @@ namespace Controllers
         [HttpGet("getPhotographerByEmail")]
         public async Task<IActionResult> GetPhotographerByEmail(string email)
         {
+            Console.WriteLine("hello");
             // get photographer by email address after authentication
             var model = await _repo.GetDataByEmail(email);
             return Ok(_mapper.Map<PhotographerDto>(model));
