@@ -26,23 +26,23 @@ namespace Data
         {
             //    Getting database data here
             var model = await _context.Photos.ToListAsync();
-            foreach (var photo in model)
-            {
-                if (photo.PhotographerEmail.Equals("yaredyaya16@gmail.com"))
-                {
-                    Console.WriteLine("yesss");
-                }
-            }
-
-
-            Console.WriteLine(model);
             return model;
 
         }
 
-        public async Task<Photos> GetDataByEmail(string email)
+        public async Task<List<Photos>> GetDataByEmail(string email)
         {
-            return await _context.Photos.FirstOrDefaultAsync(x => x.PhotographerEmail == email);
+            var model = await _context.Photos.ToListAsync();
+            List<Photos> filteredPhotos = new List<Photos>();
+            foreach (var photo in model)
+            {
+
+                if (photo.PhotographerEmail.Equals(email))
+                {
+                    filteredPhotos.Add(photo);
+                }
+            }
+            return filteredPhotos;
         }
 
         public async Task<Photos> GetDataById(int id)

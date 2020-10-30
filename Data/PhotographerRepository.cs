@@ -41,5 +41,10 @@ namespace Data
             await _context.SaveChangesAsync();
             return dept;
         }
+
+        Task<List<Photographer>> IRepository<Photographer>.GetDataByEmail(string email)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
