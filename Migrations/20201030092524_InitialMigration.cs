@@ -40,6 +40,20 @@ namespace photogrph_Displayer_api.Migrations
                 {
                     table.PrimaryKey("PK_Photos", x => x.PhotosId);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photographer_Email",
+                table: "Photographer",
+                column: "Email",
+                unique: true,
+                filter: "[Email] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photos_PhotosName",
+                table: "Photos",
+                column: "PhotosName",
+                unique: true,
+                filter: "[PhotosName] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

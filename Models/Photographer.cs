@@ -1,5 +1,8 @@
+using System.Data;
+using System.Xml;
 using System;
-
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
@@ -10,6 +13,7 @@ namespace Model
         public String FName { get; set; }
         public String LName { get; set; }
         public String Gender { get; set; }
+
         public String Email { get; set; }
         public String WorkTitle { get; set; }
         public String Country { get; set; }

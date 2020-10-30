@@ -18,12 +18,21 @@ namespace Data
         {
 
 
+            modelBuilder.Entity<Photographer>().HasKey(x => new
+            {
+                x.PhotographerId
+
+
+            });
+
+            modelBuilder.Entity<Photographer>().HasIndex(u => u.Email).IsUnique();
 
 
 
 
-            modelBuilder.Entity<Photographer>().HasKey(x => x.PhotographerId);
+
             modelBuilder.Entity<Photos>().HasKey(x => x.PhotosId);
+            modelBuilder.Entity<Photos>().HasIndex(u => u.PhotosName).IsUnique();
 
 
         }

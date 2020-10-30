@@ -32,7 +32,7 @@ namespace photogrph_Displayer_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FName")
                         .HasColumnType("nvarchar(max)");
@@ -54,6 +54,10 @@ namespace photogrph_Displayer_api.Migrations
 
                     b.HasKey("PhotographerId");
 
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
                     b.ToTable("Photographer");
                 });
 
@@ -68,9 +72,13 @@ namespace photogrph_Displayer_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotosName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("PhotosId");
+
+                    b.HasIndex("PhotosName")
+                        .IsUnique()
+                        .HasFilter("[PhotosName] IS NOT NULL");
 
                     b.ToTable("Photos");
                 });
