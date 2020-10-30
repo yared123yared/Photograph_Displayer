@@ -7,9 +7,9 @@ namespace DTO
     public class PhotosDto
     {
         [Required]
-        public int photosId { get; set; }
+        public int PhotosId { get; set; }
         [Required]
-        public string PhotographerId { get; set; }
+        public string PhotographerEmail { get; set; }
         [Required]
 
         public string PhotosName { get; set; }
