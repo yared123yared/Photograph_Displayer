@@ -21,14 +21,18 @@ namespace Data
 
             modelBuilder.Entity<Photos>().HasKey(x => new
             {
-                x.PhotographerId,
-                x.photosId
+                x.PhotographerEmail,
+                x.PhotosId
 
+            });
+            modelBuilder.Entity<Photographer>().HasKey(x => new
+            {
+                x.PhotographerId,
+                x.Email
             });
 
 
-            modelBuilder.Entity<Photographer>().HasKey(x => x.PhotographerId);
-            modelBuilder.Entity<Photos>().HasKey(x => x.photosId);
+
 
 
         }

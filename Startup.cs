@@ -36,6 +36,7 @@ namespace photogrph_Displayer_api
             services.AddControllers();
 
             services.AddScoped<IRepository<Photographer>, PhotographerRepository>();
+            services.AddScoped<IRepository<Photos>, PhotosRepository>();
             // services.AddScoped<IRepository<Photos>, DepartmentRepository>();
         }
 

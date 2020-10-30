@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace photogrph_Displayer_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201029150056_InitialMigration")]
+    [Migration("20201029234850_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,17 +23,15 @@ namespace photogrph_Displayer_api.Migrations
             modelBuilder.Entity("Model.Photographer", b =>
                 {
                     b.Property<int>("PhotographerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FName")
@@ -54,25 +52,23 @@ namespace photogrph_Displayer_api.Migrations
                     b.Property<string>("WorkTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PhotographerId");
+                    b.HasKey("PhotographerId", "Email");
 
                     b.ToTable("Photographer");
                 });
 
             modelBuilder.Entity("Model.Photos", b =>
                 {
-                    b.Property<int>("photosId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("PhotographerEmail")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PhotographerId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PhotosId")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhotosName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("photosId");
+                    b.HasKey("PhotographerEmail", "PhotosId");
 
                     b.ToTable("Photos");
                 });
