@@ -21,7 +21,7 @@ namespace Controllers
             _mapper = mapper;
         }
         [HttpGet("getAllAuthentictedUser")]
-
+        
         public async Task<IActionResult> GetPhotographer()
         {
             var model = await _repo.GetData();

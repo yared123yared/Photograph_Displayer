@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Cors;
 using Model;
 
 namespace photogrph_Displayer_api
@@ -32,6 +33,13 @@ namespace photogrph_Displayer_api
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("photographConnection")));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+             services.AddCors();
+
+
+services.Configure<MvcOptions>(options =>
+    {
+        options.Filters.Add(new CorsAuthorizationFilterFactory("*"));
+    });
 
             services.AddControllers();
 
@@ -56,6 +64,9 @@ namespace photogrph_Displayer_api
             app.UseRouting();
 
             app.UseAuthorization();
+             // Shows UseCors with CorsPolicyBuilder.
+    app.UseCors(builder =>
+       builder.WithOrigins("*"));
 
             app.UseEndpoints(endpoints =>
             {

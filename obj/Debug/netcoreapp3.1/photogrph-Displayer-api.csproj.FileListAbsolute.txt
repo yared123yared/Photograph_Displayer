@@ -61,3 +61,4 @@ C:\Users\yared\Documents\education\Photograph-Displayer\photogrph-Displayer-api\
 C:\Users\yared\Documents\education\Photograph-Displayer\photogrph-Displayer-api\obj\Debug\netcoreapp3.1\photogrph-Displayer-api.dll
 C:\Users\yared\Documents\education\Photograph-Displayer\photogrph-Displayer-api\obj\Debug\netcoreapp3.1\photogrph-Displayer-api.pdb
 C:\Users\yared\Documents\education\Photograph-Displayer\photogrph-Displayer-api\obj\Debug\netcoreapp3.1\photogrph-Displayer-api.genruntimeconfig.cache
+C:\Users\yared\Documents\education\Photograph-Displayer\photogrph-Displayer-api\bin\Debug\netcoreapp3.1\Web.config
