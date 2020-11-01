@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -36,9 +37,10 @@ namespace Controllers
             return Ok(_mapper.Map<PhotographerDto>(model));
         }
         [HttpPost("InsertPhotographer")]
-        [EnableCors("*")]
-        public async Task<IActionResult> CreateDeoartment(PhotographerDto photographerDto)
-        {
+        
+        public async Task<IActionResult> CreatePhotographer(PhotographerDto photographerDto)
+        {   
+            Console.WriteLine("this is the InsertPhotographer method controlller");
             // here will be the insert method
             var photographer = _mapper.Map<Photographer>(photographerDto);
             await _repo.UpdateData(photographer);
