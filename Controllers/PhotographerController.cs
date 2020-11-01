@@ -6,6 +6,7 @@ using Data;
 using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using Microsoft.AspNetCore.Cors;
 
 namespace Controllers
 {
@@ -35,6 +36,7 @@ namespace Controllers
             return Ok(_mapper.Map<PhotographerDto>(model));
         }
         [HttpPost("InsertPhotographer")]
+        [EnableCors("*")]
         public async Task<IActionResult> CreateDeoartment(PhotographerDto photographerDto)
         {
             // here will be the insert method

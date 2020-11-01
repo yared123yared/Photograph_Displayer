@@ -36,10 +36,10 @@ namespace photogrph_Displayer_api
              services.AddCors();
 
 
-services.Configure<MvcOptions>(options =>
-    {
-        options.Filters.Add(new CorsAuthorizationFilterFactory("*"));
-    });
+
+
+
+
 
             services.AddControllers();
 
