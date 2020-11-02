@@ -51,7 +51,7 @@ namespace Controllers
         }
         [HttpGet("getPhotosByEmail")]
         public async Task<IActionResult> GetPhotosByEmail(string email)
-        {
+        {   
             // get photographer by email address after authentication
             var model = await _repo.GetPhotosByEmail(email);
             // return Ok(_mapper.Map<PhotosDto>(model));

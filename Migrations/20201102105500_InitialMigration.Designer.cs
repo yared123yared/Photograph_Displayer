@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace photogrph_Displayer_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201102061505_InitialMigration")]
+    [Migration("20201102105500_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
