@@ -7,6 +7,19 @@ namespace photogrph_Displayer_api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "LoggedInPhotographer",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoggedInPhotographer", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Photographer",
                 columns: table => new
                 {
@@ -47,17 +60,13 @@ namespace photogrph_Displayer_api.Migrations
                 column: "Email",
                 unique: true,
                 filter: "[Email] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Photos_PhotosName",
-                table: "Photos",
-                column: "PhotosName",
-                unique: true,
-                filter: "[PhotosName] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "LoggedInPhotographer");
+
             migrationBuilder.DropTable(
                 name: "Photographer");
 

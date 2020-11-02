@@ -30,6 +30,15 @@ namespace Data
 
         }
 
+
+
+
+
+
+
+
+
+
         public async Task<List<Photos>> GetPhotosByEmail(string email)
         {
             var model = await _context.Photos.ToListAsync();
@@ -60,6 +69,16 @@ namespace Data
             _context.Photos.Add(photos);
             await _context.SaveChangesAsync();
             return photos;
+        }
+
+        public Task<List<Photos>> GetLoggedInUsers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Photos> InsertLoggedInUser(Photos student)
+        {
+            throw new NotImplementedException();
         }
     }
 }

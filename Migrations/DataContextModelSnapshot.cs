@@ -18,6 +18,21 @@ namespace photogrph_Displayer_api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Model.LoggedInPhotographer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoggedInPhotographer");
+                });
+
             modelBuilder.Entity("Model.Photographer", b =>
                 {
                     b.Property<int>("PhotographerId")
@@ -72,13 +87,9 @@ namespace photogrph_Displayer_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotosName")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PhotosId");
-
-                    b.HasIndex("PhotosName")
-                        .IsUnique()
-                        .HasFilter("[PhotosName] IS NOT NULL");
 
                     b.ToTable("Photos");
                 });

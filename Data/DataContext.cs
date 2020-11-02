@@ -10,6 +10,8 @@ namespace Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Photographer> Photographer { get; set; }
         public DbSet<Photos> Photos { get; set; }
+        public DbSet<LoggedInPhotographer> LoggedInPhotographer { get; set; }
+
 
 
 
@@ -31,9 +33,9 @@ namespace Data
 
 
 
+            modelBuilder.Entity<LoggedInPhotographer>().HasKey(x => x.Id);
+            // modelBuilder.Entity<Photos>().HasIndex(u => u.PhotosName).IsUnique();
             modelBuilder.Entity<Photos>().HasKey(x => x.PhotosId);
-            modelBuilder.Entity<Photos>().HasIndex(u => u.PhotosName).IsUnique();
-
 
         }
     }

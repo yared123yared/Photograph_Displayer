@@ -35,9 +35,27 @@ namespace Data
 
 
 
+
+
+
+
+
+
+
+
         public async Task<Photographer> GetDataById(int id)
         {
             return await _context.Photographer.FirstOrDefaultAsync(x => x.PhotographerId == id);
+        }
+
+        public Task<List<Photographer>> GetLoggedInUsers()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Photographer> InsertLoggedInUser(Photographer student)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task<Photographer> UpdateData(Photographer dept)

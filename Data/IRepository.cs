@@ -12,6 +12,9 @@ namespace Data
         Task<List<T>> GetPhotosByEmail(string email);
         Task<T> UpdateData(T student);
         Task<bool> DeleteData(T student);
+        Task<List<T>> GetLoggedInUsers();
+        Task<T> InsertLoggedInUser(T student);
+
 
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace photogrph_Displayer_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201030092524_InitialMigration")]
+    [Migration("20201102061505_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,6 +19,21 @@ namespace photogrph_Displayer_api.Migrations
                 .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Model.LoggedInPhotographer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoggedInPhotographer");
+                });
 
             modelBuilder.Entity("Model.Photographer", b =>
                 {
@@ -74,13 +89,9 @@ namespace photogrph_Displayer_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotosName")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PhotosId");
-
-                    b.HasIndex("PhotosName")
-                        .IsUnique()
-                        .HasFilter("[PhotosName] IS NOT NULL");
 
                     b.ToTable("Photos");
                 });
